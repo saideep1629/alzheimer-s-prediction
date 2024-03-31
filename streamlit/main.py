@@ -5,7 +5,7 @@ import numpy as np
 
 #Tensorflow Model Prediction
 def model_prediction(test_image):
-    model = tf.keras.models.load_model("alzheimer.h5")
+    model = tf.keras.models.load_model("streamlit/alzheimer.h5")
     image = tf.keras.preprocessing.image.load_img(test_image,target_size=(256,256))
     input_arr = tf.keras.preprocessing.image.img_to_array(image)
     input_arr = np.array([input_arr]) #convert single image to batch
@@ -21,7 +21,7 @@ app_mode = st.sidebar.selectbox("Select Page",["Home","About","Alzheimer Predict
 #Main Page
 if(app_mode=="Home"):
     st.header("ALZHEIMER DISEASE PREDICTION")
-    image_path = "home.jpg"
+    image_path = "streamlit/home.jpg"
     st.image(image_path,use_column_width=True)
     st.markdown("""
     "Welcome to the Alzheimer's Disease Prediction System! 🧠🔍
@@ -58,9 +58,9 @@ elif(app_mode=="About"):
                 """)
     col1, col2 = st.columns(2)  # Create two columns for side-by-side display
     with col1:
-        st.image("training.png", caption="Training and Validation Loss", use_column_width=False)
+        st.image("strealit/training.png", caption="Training and Validation Loss", use_column_width=False)
     with col2:
-        st.image("test.png", caption="Training and Validation Accuracy", use_column_width=False)
+        st.image("streamlit/test.png", caption="Training and Validation Accuracy", use_column_width=False)
 
 #Prediction Page
 elif(app_mode=="Alzheimer Prediction"):
