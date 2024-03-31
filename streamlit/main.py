@@ -58,7 +58,7 @@ elif(app_mode=="About"):
                 """)
     col1, col2 = st.columns(2)  # Create two columns for side-by-side display
     with col1:
-        st.image("strealit/training.png", caption="Training and Validation Loss", use_column_width=False)
+        st.image("streamlit/training.png", caption="Training and Validation Loss", use_column_width=False)
     with col2:
         st.image("streamlit/test.png", caption="Training and Validation Accuracy", use_column_width=False)
 
